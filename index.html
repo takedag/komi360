@@ -2,7 +2,7 @@
 <html lang="ja"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>マンション銀河 Cタイプ｜360°室内ツアー</title>
+<title>古民家｜360°内覧ツアー</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.css">
 <style>
 :root{--green:#15864b;--glass:rgba(15,20,18,.82);--shadow:0 8px 28px rgba(0,0,0,.28)}
@@ -92,11 +92,12 @@
 .hotspotEditor.closed{display:none}.hotspotEditor h3{font-size:14px;margin:0 0 8px}.hotspotEditor label{display:block;font-size:11px;font-weight:800;margin:7px 0 3px}.hotspotEditor select,.hotspotEditor input{width:100%;padding:7px;border:1px solid #bbb;border-radius:7px;background:#fff}.hotspotGrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}.hotspotGrid button,.hotspotEditor .wideBtn{border:0;border-radius:8px;padding:8px;background:#15864b;color:#fff;font-weight:800;cursor:pointer}.hotspotEditor .wideBtn{width:100%;margin-top:7px}.hotspotEditor .danger{background:#b44141}.hotspotReadout{margin-top:7px;font:12px monospace;background:#eee;padding:7px;border-radius:7px}.crosshair{position:absolute;z-index:34;left:50%;top:50%;width:34px;height:34px;transform:translate(-50%,-50%);pointer-events:none;display:none}.crosshair.on{display:block}.crosshair:before,.crosshair:after{content:"";position:absolute;background:#ffdf00;box-shadow:0 0 3px #000}.crosshair:before{left:16px;top:0;width:2px;height:34px}.crosshair:after{left:0;top:16px;width:34px;height:2px}.editorLaunch{position:absolute;z-index:32;left:12px;top:78px;border:0;border-radius:10px;padding:9px 12px;background:#d58a00;color:#fff;font-weight:900;cursor:pointer}.publicMode .editorLaunch,.publicMode .hotspotEditor,.publicMode .mapEditTools,.publicMode #mapEditStatus,.publicMode .crosshair,.publicMode #coordBtn,.publicMode #coordBox{display:none!important}
 @media(max-width:700px){.hotspotEditor{left:7px;top:72px;width:250px}.editorLaunch{left:7px;top:72px}}
 
+#mapPanel,#mapBtn{display:none!important}
 </style>
 </head>
 <body data-public-mode="true" class="publicMode">
 <div id="app"><div id="panorama" tabindex="0"></div>
-<header class="topbar"><div><div class="title">マンション銀河 Cタイプ 360°室内ツアー</div><div class="subtitle">株式会社マルスギ</div></div><div id="sceneName">トイレ</div></header>
+<header class="topbar"><div><div class="title">古民家 360°内覧ツアー</div><div class="subtitle">360°写真で室内をご覧いただけます</div></div><div id="sceneName">玄関</div></header>
 <aside id="mapPanel" class="mapPanel">
 <div class="mapHead">
   <strong>間取りから移動</strong>
@@ -157,7 +158,7 @@
 
 <div class="controls"><button class="uiBtn primary" id="fullBtn">全画面</button><button class="uiBtn" id="mapBtn">間取り図</button><button class="uiBtn" id="rotateBtn">自動回転</button><button class="uiBtn" id="thumbBtn">写真一覧</button><button class="uiBtn" id="coordBtn">座標確認</button></div><div id="coordBox" class="coordBox">pitch: 0 / yaw: 0</div>
 <div id="mapEditStatus" class="mapEditStatus">トイレ「廊下へ」を中央位置に設定しました</div><div id="thumbsWrap" class="thumbsWrap open"><nav id="thumbs" class="thumbs"></nav></div></div>
-<script id="sceneData" type="application/json">{"entrance":{"title":"玄関","image":"images/01_玄関.JPG","yaw":0,"links":[{"pitch":0.2,"yaw":-55.4,"target":"room48","label":"洋室4.8帖へ"},{"pitch":1.9,"yaw":-18.5,"target":"room6","label":"洋室6帖へ"},{"pitch":3.1,"yaw":54.5,"target":"washroom","label":"洗面脱衣室へ"},{"pitch":2.5,"yaw":67.9,"target":"toilet","label":"トイレへ"},{"pitch":2.6,"yaw":77.7,"target":"ldk","label":"LDKへ"}]},"hall":{"title":"廊下","image":"images/02_廊下.JPG","yaw":0,"links":[{"pitch":6,"yaw":97.1,"target":"ldk","label":"LDKへ"},{"pitch":0.5,"yaw":-72,"target":"room48","label":"洋室4.8帖へ"},{"pitch":-1.5,"yaw":-27.1,"target":"washroom","label":"洗面脱衣室へ"},{"pitch":1.4,"yaw":54.7,"target":"toilet","label":"トイレへ"}]},"kitchen":{"title":"キッチン","image":"images/03_キッチン.JPG","yaw":0,"links":[{"pitch":-15.2,"yaw":80.3,"target":"ldk","label":"LDKへ"},{"pitch":-14.7,"yaw":-4.6,"target":"hall","label":"廊下へ"}]},"ldk":{"title":"LDK","image":"images/04_LDK.JPG","yaw":0,"links":[{"pitch":-2,"yaw":117.3,"target":"hall","label":"廊下へ"},{"pitch":-1.6,"yaw":90.4,"target":"kitchen","label":"キッチンへ"},{"pitch":-5,"yaw":-178.4,"target":"room","label":"洋室へ"},{"pitch":-4.4,"yaw":-97.1,"target":"balconySouth","label":"南側バルコニーへ"}]},"room":{"title":"洋室","image":"images/05_洋室.JPG","yaw":0,"links":[{"pitch":-4.9,"yaw":-33,"target":"ldk","label":"LDKへ"},{"pitch":-3.9,"yaw":-121.4,"target":"balconySouth","label":"南側バルコニーへ"}]},"balconySouth":{"title":"南側バルコニー","image":"images/06_南バルコニー.JPG","yaw":0,"links":[{"pitch":-11.4,"yaw":162.3,"target":"room","label":"洋室へ戻る"},{"pitch":-8.3,"yaw":16.9,"target":"ldk","label":"LDKへ"}]},"room6":{"title":"洋室6帖","image":"images/07_洋室6帖.JPG","yaw":0,"links":[{"pitch":-7,"yaw":74.5,"target":"hall","label":"廊下へ"},{"pitch":-8.5,"yaw":-158.2,"target":"balconyNorth","label":"北側バルコニーへ"}]},"balconyNorth":{"title":"北側バルコニー","image":"images/08_北バルコニー.JPG","yaw":0,"links":[{"pitch":-10,"yaw":169.9,"target":"room6","label":"洋室6帖へ戻る"}]},"room48":{"title":"洋室4.8帖","image":"images/09_洋室4.8帖.JPG","yaw":0,"links":[{"pitch":-5.8,"yaw":30.7,"target":"hall","label":"廊下へ"}]},"washroom":{"title":"洗面脱衣室","image":"images/10_洗面脱衣室.JPG","yaw":0,"links":[{"pitch":-2.8,"yaw":-3.4,"target":"hall","label":"廊下へ"},{"pitch":-8,"yaw":170.9,"target":"bathroom","label":"浴室へ"}]},"bathroom":{"title":"浴室","image":"images/11_浴室.JPG","yaw":0,"links":[{"pitch":-0.1,"yaw":0.6,"target":"washroom","label":"洗面脱衣室へ"}]},"toilet":{"title":"トイレ","image":"images/12_トイレ.JPG","yaw":0,"links":[{"pitch":5.4,"yaw":12.6,"target":"hall","label":"廊下へ"}]}}</script>
+<script id="sceneData" type="application/json">{"reception":{"title":"応接室","image":"images/①応接室.JPG","yaw":0,"links":[]},"washitsu1":{"title":"和室1","image":"images/②和室1.JPG","yaw":0,"links":[]},"washitsu2":{"title":"和室2","image":"images/③和室2.JPG","yaw":0,"links":[]},"entrance":{"title":"玄関","image":"images/④玄関.JPG","yaw":0,"links":[]},"bathroom":{"title":"浴室","image":"images/⑤浴室.JPG","yaw":0,"links":[]},"hall1":{"title":"廊下1","image":"images/⑥廊下1.JPG","yaw":0,"links":[]},"washroom":{"title":"洗面","image":"images/⑦洗面.JPG","yaw":0,"links":[]},"hall2":{"title":"廊下2","image":"images/⑧廊下2.JPG","yaw":0,"links":[]},"room1":{"title":"洋室1","image":"images/⑨洋室1.JPG","yaw":0,"links":[]},"center":{"title":"中央","image":"images/⑩中央.JPG","yaw":0,"links":[]},"storage1":{"title":"物置","image":"images/⑪物置.JPG","yaw":0,"links":[]},"room2":{"title":"洋室2","image":"images/⑫洋室2.JPG","yaw":0,"links":[]},"room3":{"title":"洋室3","image":"images/⑬洋室3.JPG","yaw":0,"links":[]},"toilet":{"title":"トイレ","image":"images/⑭トイレ.JPG","yaw":0,"links":[]},"dressing":{"title":"脱衣","image":"images/⑮脱衣.JPG","yaw":0,"links":[]},"stairs":{"title":"階段","image":"images/⑯階段.JPG","yaw":0,"links":[]},"up_room1":{"title":"2階洋室1","image":"images/⑰2階洋室1.JPG","yaw":0,"links":[]},"up_room2":{"title":"2階洋室2","image":"images/⑱2階洋室2.JPG","yaw":0,"links":[]},"up_washitsu":{"title":"2階和室","image":"images/⑲2階和室.JPG","yaw":0,"links":[]},"up_hall":{"title":"2階廊下","image":"images/⑳2階廊下.JPG","yaw":0,"links":[]},"terrace":{"title":"2階テラス","image":"images/㉑2階テラス.JPG","yaw":0,"links":[]},"up_storage":{"title":"2階物置","image":"images/㉒2階物置.JPG","yaw":0,"links":[]}}</script>
 <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
 <script>
 const publicMode=document.body.dataset.publicMode==="true";
@@ -240,43 +241,5 @@ if(clonePanorama){
 const output="<!doctype html>\n"+clone.outerHTML;const blob=new Blob([output],{type:"text/html;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="index.html";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);showStatus("現在の丸数字・緑ボタン位置を埋め込んだ index.html を保存しました")});
 document.addEventListener("contextmenu",e=>{if(e.target.closest("#panorama"))e.preventDefault()});
 sync("entrance");
-</script><!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
 </script>
-
 </body></html>
