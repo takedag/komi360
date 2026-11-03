@@ -97,7 +97,7 @@
 </head>
 <body data-public-mode="true" class="publicMode">
 <div id="app"><div id="panorama" tabindex="0"></div>
-<header class="topbar"><div><div class="title">古民家 360°内覧ツアー</div><div class="subtitle">360°写真で室内をご覧いただけます</div></div><div id="sceneName">玄関</div></header>
+<header class="topbar"><div><div class="title">古民家 360°内覧ツアー</div><div class="subtitle">360°写真で室内をご覧いただけます</div></div><div id="sceneName">中央</div></header>
 <aside id="mapPanel" class="mapPanel">
 <div class="mapHead">
   <strong>間取りから移動</strong>
@@ -122,7 +122,7 @@
 <button class="roomBtn" id="b-room48" style="left: 41.53%; top: 15.35%;" data-scene="room48">9</button>
 <button class="roomBtn" id="b-wash" style="left: 60.73%; top: 42.45%;" data-scene="washroom">10</button>
 <button class="roomBtn" id="b-bath" style="left: 74.86%; top: 41.01%;" data-scene="bathroom">11</button>
-<button class="roomBtn active" id="b-toilet" style="left: 52.82%; top: 49.27%;" data-scene="toilet">12</button>
+<button class="roomBtn" id="b-toilet" style="left: 52.82%; top: 49.27%;" data-scene="toilet">12</button>
 </div>
 <div class="mapNote">番号を押すと移動します。</div>
 </aside>
@@ -131,13 +131,13 @@
 <section id="hotspotEditor" class="hotspotEditor">
   <h3>360°画像内の緑ボタン位置調整</h3>
   <label for="editSceneSelect">編集する写真</label>
-  <select id="editSceneSelect"><option value="entrance">玄関</option><option value="hall">廊下</option><option value="kitchen">キッチン</option><option value="ldk">LDK</option><option value="room">洋室</option><option value="balconySouth">南側バルコニー</option><option value="room6">洋室6帖</option><option value="balconyNorth">北側バルコニー</option><option value="room48">洋室4.8帖</option><option value="washroom">洗面脱衣室</option><option value="bathroom">浴室</option><option value="toilet">トイレ</option></select>
+  <select id="editSceneSelect"><option value="reception">応接室</option><option value="washitsu1">和室1</option><option value="washitsu2">和室2</option><option value="entrance">玄関</option><option value="bathroom">浴室</option><option value="hall1">廊下1</option><option value="washroom">洗面</option><option value="hall2">廊下2</option><option value="room1">洋室1</option><option value="center">中央</option><option value="storage1">物置</option><option value="room2">洋室2</option><option value="room3">洋室3</option><option value="toilet">トイレ</option><option value="dressing">脱衣</option><option value="stairs">階段</option><option value="up_room1">2階洋室1</option><option value="up_room2">2階洋室2</option><option value="up_washitsu">2階和室</option><option value="up_hall">2階廊下</option><option value="terrace">2階テラス</option><option value="up_storage">2階物置</option></select>
   <label for="editLinkSelect">動かす緑ボタン</label>
-  <select id="editLinkSelect"><option value="0">1. 廊下へ</option></select>
-  <div id="hotspotReadout" class="hotspotReadout">pitch: 5.4 / yaw: 12.6 / 移動先: 廊下</div>
+  <select id="editLinkSelect"><option value="0">1. 洋室1へ</option><option value="1">2. 廊下2へ</option><option value="2">3. 物置へ</option></select>
+  <div id="hotspotReadout" class="hotspotReadout">pitch: -2.6 / yaw: 109.9 / 移動先: 洋室1</div>
   <div style="border-top:1px solid #ccc;margin-top:10px;padding-top:6px;font-size:11px;font-weight:900">緑ボタンの追加・削除</div>
   <label for="newLinkTarget">追加する移動先</label>
-  <select id="newLinkTarget"><option value="entrance">玄関</option><option value="hall">廊下</option><option value="kitchen">キッチン</option><option value="ldk">LDK</option><option value="room">洋室</option><option value="balconySouth">南側バルコニー</option><option value="room6">洋室6帖</option><option value="balconyNorth">北側バルコニー</option><option value="room48">洋室4.8帖</option><option value="washroom">洗面脱衣室</option><option value="bathroom">浴室</option></select>
+  <select id="newLinkTarget"><option value="reception">応接室</option><option value="washitsu1">和室1</option><option value="washitsu2">和室2</option><option value="entrance">玄関</option><option value="bathroom">浴室</option><option value="hall1">廊下1</option><option value="washroom">洗面</option><option value="hall2">廊下2</option><option value="room1">洋室1</option><option value="storage1">物置</option><option value="room2">洋室2</option><option value="room3">洋室3</option><option value="toilet">トイレ</option><option value="dressing">脱衣</option><option value="stairs">階段</option><option value="up_room1">2階洋室1</option><option value="up_room2">2階洋室2</option><option value="up_washitsu">2階和室</option><option value="up_hall">2階廊下</option><option value="terrace">2階テラス</option><option value="up_storage">2階物置</option></select>
   <label for="newLinkLabel">緑ボタンに表示する名前</label>
   <input id="newLinkLabel" type="text" placeholder="例：浴室へ">
   <button id="addHotspotCenter" class="wideBtn" type="button">黄色十字の位置に緑ボタンを追加</button>
@@ -156,9 +156,9 @@
 </section>
 <div id="crosshair" class="crosshair on"></div>
 
-<div class="controls"><button class="uiBtn primary" id="fullBtn">全画面</button><button class="uiBtn" id="mapBtn">間取り図</button><button class="uiBtn" id="rotateBtn">自動回転</button><button class="uiBtn" id="thumbBtn">写真一覧</button><button class="uiBtn" id="coordBtn">座標確認</button></div><div id="coordBox" class="coordBox">pitch: 0 / yaw: 0</div>
-<div id="mapEditStatus" class="mapEditStatus">トイレ「廊下へ」を中央位置に設定しました</div><div id="thumbsWrap" class="thumbsWrap open"><nav id="thumbs" class="thumbs"></nav></div></div>
-<script id="sceneData" type="application/json">{"reception":{"title":"応接室","image":"images/①応接室.JPG","yaw":0,"links":[]},"washitsu1":{"title":"和室1","image":"images/②和室1.JPG","yaw":0,"links":[]},"washitsu2":{"title":"和室2","image":"images/③和室2.JPG","yaw":0,"links":[]},"entrance":{"title":"玄関","image":"images/④玄関.JPG","yaw":0,"links":[]},"bathroom":{"title":"浴室","image":"images/⑤浴室.JPG","yaw":0,"links":[]},"hall1":{"title":"廊下1","image":"images/⑥廊下1.JPG","yaw":0,"links":[]},"washroom":{"title":"洗面","image":"images/⑦洗面.JPG","yaw":0,"links":[]},"hall2":{"title":"廊下2","image":"images/⑧廊下2.JPG","yaw":0,"links":[]},"room1":{"title":"洋室1","image":"images/⑨洋室1.JPG","yaw":0,"links":[]},"center":{"title":"中央","image":"images/⑩中央.JPG","yaw":0,"links":[]},"storage1":{"title":"物置","image":"images/⑪物置.JPG","yaw":0,"links":[]},"room2":{"title":"洋室2","image":"images/⑫洋室2.JPG","yaw":0,"links":[]},"room3":{"title":"洋室3","image":"images/⑬洋室3.JPG","yaw":0,"links":[]},"toilet":{"title":"トイレ","image":"images/⑭トイレ.JPG","yaw":0,"links":[]},"dressing":{"title":"脱衣","image":"images/⑮脱衣.JPG","yaw":0,"links":[]},"stairs":{"title":"階段","image":"images/⑯階段.JPG","yaw":0,"links":[]},"up_room1":{"title":"2階洋室1","image":"images/⑰2階洋室1.JPG","yaw":0,"links":[]},"up_room2":{"title":"2階洋室2","image":"images/⑱2階洋室2.JPG","yaw":0,"links":[]},"up_washitsu":{"title":"2階和室","image":"images/⑲2階和室.JPG","yaw":0,"links":[]},"up_hall":{"title":"2階廊下","image":"images/⑳2階廊下.JPG","yaw":0,"links":[]},"terrace":{"title":"2階テラス","image":"images/㉑2階テラス.JPG","yaw":0,"links":[]},"up_storage":{"title":"2階物置","image":"images/㉒2階物置.JPG","yaw":0,"links":[]}}</script>
+<div class="controls"><button class="uiBtn primary" id="fullBtn">全画面</button><button class="uiBtn" id="mapBtn">間取り図</button><button class="uiBtn active" id="rotateBtn">自動回転</button><button class="uiBtn" id="thumbBtn">写真一覧</button><button class="uiBtn" id="coordBtn">座標確認</button><button class="uiBtn primary" id="publicExportBtn">公開用HTML保存</button></div><div id="coordBox" class="coordBox">pitch: 0 / yaw: 0</div>
+<div id="mapEditStatus" class="mapEditStatus">洗面に「トイレへ」を追加しました</div><div id="thumbsWrap" class="thumbsWrap open"><nav id="thumbs" class="thumbs"></nav></div></div>
+<script id="sceneData" type="application/json">{"reception":{"title":"応接室","image":"images/①応接室.JPG","yaw":0,"links":[{"pitch":-4.8,"yaw":97.2,"target":"entrance","label":"玄関へ"},{"pitch":-10.6,"yaw":-2.4,"target":"washitsu1","label":"和室1へ"}]},"washitsu1":{"title":"和室1","image":"images/②和室1.JPG","yaw":0,"links":[{"pitch":-4.4,"yaw":176.7,"target":"reception","label":"応接室へ"}]},"washitsu2":{"title":"和室2","image":"images/③和室2.JPG","yaw":0,"links":[]},"entrance":{"title":"玄関","image":"images/④玄関.JPG","yaw":0,"links":[{"pitch":-4.9,"yaw":-125.4,"target":"reception","label":"応接室へ"},{"pitch":7.5,"yaw":4.4,"target":"stairs","label":"階段へ"},{"pitch":-4.5,"yaw":-45.2,"target":"washitsu1","label":"和室1へ"},{"pitch":-6,"yaw":-89.6,"target":"washitsu2","label":"和室2へ"}]},"bathroom":{"title":"浴室","image":"images/⑤浴室.JPG","yaw":0,"links":[{"pitch":-31.4,"yaw":177.3,"target":"dressing","label":"脱衣へ"}]},"hall1":{"title":"廊下1","image":"images/⑥廊下1.JPG","yaw":0,"links":[]},"washroom":{"title":"洗面","image":"images/⑦洗面.JPG","yaw":0,"links":[{"pitch":-3.4,"yaw":-14.6,"target":"center","label":"中央へ"},{"pitch":-10.5,"yaw":117.7,"target":"toilet","label":"トイレへ"}]},"hall2":{"title":"廊下2","image":"images/⑧廊下2.JPG","yaw":0,"links":[{"pitch":-13,"yaw":-15.5,"target":"room1","label":"洋室1へ"}]},"room1":{"title":"洋室1","image":"images/⑨洋室1.JPG","yaw":0,"links":[{"pitch":-6.3,"yaw":47.8,"target":"center","label":"中央へ"}]},"center":{"title":"中央","image":"images/⑩中央.JPG","yaw":0,"links":[{"pitch":-2.6,"yaw":109.9,"target":"room1","label":"洋室1へ"},{"pitch":-4.5,"yaw":95.3,"target":"hall2","label":"廊下2へ"},{"pitch":-1.6,"yaw":-144.2,"target":"storage1","label":"物置へ"}]},"storage1":{"title":"物置","image":"images/⑪物置.JPG","yaw":0,"links":[{"pitch":-9.8,"yaw":-2.1,"target":"center","label":"中央へ"}]},"room2":{"title":"洋室2","image":"images/⑫洋室2.JPG","yaw":0,"links":[{"pitch":-11.7,"yaw":10.4,"target":"room3","label":"洋室3へ"}]},"room3":{"title":"洋室3","image":"images/⑬洋室3.JPG","yaw":0,"links":[{"pitch":-12.8,"yaw":-175.5,"target":"room2","label":"洋室2へ"}]},"toilet":{"title":"トイレ","image":"images/⑭トイレ.JPG","yaw":0,"links":[{"pitch":-19.3,"yaw":-82.9,"target":"washroom","label":"洗面へ"}]},"dressing":{"title":"脱衣","image":"images/⑮脱衣.JPG","yaw":0,"links":[{"pitch":-16.6,"yaw":94.3,"target":"bathroom","label":"浴室へ"}]},"stairs":{"title":"階段","image":"images/⑯階段.JPG","yaw":0,"links":[{"pitch":6.6,"yaw":6.2,"target":"up_hall","label":"2階廊下へ"},{"pitch":-43.7,"yaw":-23.9,"target":"entrance","label":"玄関へ"}]},"up_room1":{"title":"2階洋室1","image":"images/⑰2階洋室1.JPG","yaw":0,"links":[{"pitch":-24,"yaw":78.4,"target":"up_hall","label":"2階廊下へ"}]},"up_room2":{"title":"2階洋室2","image":"images/⑱2階洋室2.JPG","yaw":0,"links":[{"pitch":-13.9,"yaw":178.4,"target":"up_washitsu","label":"2階和室へ"},{"pitch":-6.9,"yaw":127.6,"target":"up_hall","label":"2階廊下へ"}]},"up_washitsu":{"title":"2階和室","image":"images/⑲2階和室.JPG","yaw":0,"links":[{"pitch":-2.8,"yaw":-10.5,"target":"terrace","label":"2階テラスへ"},{"pitch":-14.5,"yaw":172.7,"target":"up_room2","label":"2階洋室2へ"}]},"up_hall":{"title":"2階廊下","image":"images/⑳2階廊下.JPG","yaw":0,"links":[{"pitch":-7.6,"yaw":174,"target":"up_storage","label":"2階物置へ"},{"pitch":-31.9,"yaw":-149.3,"target":"stairs","label":"階段へ"},{"pitch":-18.3,"yaw":-0.7,"target":"up_room1","label":"2階洋室1へ"},{"pitch":-2,"yaw":91.3,"target":"up_room2","label":"2階洋室2へ"}]},"terrace":{"title":"2階テラス","image":"images/㉑2階テラス.JPG","yaw":0,"links":[]},"up_storage":{"title":"2階物置","image":"images/㉒2階物置.JPG","yaw":0,"links":[{"pitch":-10.4,"yaw":72.8,"target":"up_hall","label":"2階廊下へ"}]}}</script>
 <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
 <script>
 const publicMode=document.body.dataset.publicMode==="true";
@@ -228,6 +228,8 @@ function loadTemporary(){if(publicMode)return;try{const savedMap=JSON.parse(loca
 if(!publicMode){loadTemporary();fillTargetSelect();fillLinkSelect();}
 
 // 公開用HTML書き出し：現在値をHTML本体へ直接埋め込む
+function exportPublicHtml(){const clone=document.documentElement.cloneNode(true);mapButtons.forEach(btn=>{const c=clone.querySelector("#"+btn.id);if(c){c.style.left=btn.style.left;c.style.top=btn.style.top}});clone.querySelector("#sceneData").textContent=JSON.stringify(scenes);clone.querySelector("body").dataset.publicMode="true";clone.querySelector("body").classList.add("publicMode");const note=clone.querySelector(".mapNote");if(note)note.textContent="番号を押すと移動します。";const cloneThumbs=clone.querySelector("#thumbs");if(cloneThumbs)cloneThumbs.innerHTML="";const clonePanorama=clone.querySelector("#panorama");if(clonePanorama){clonePanorama.innerHTML="";clonePanorama.removeAttribute("class");clonePanorama.removeAttribute("style")}const output="<!doctype html>\n"+clone.outerHTML;const blob=new Blob([output],{type:"text/html;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="index.html";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);showStatus("緑矢印を埋め込んだ公開用 index.html を保存しました")}
+if(!publicMode){const pe=document.getElementById("publicExportBtn");if(pe)pe.addEventListener("click",exportPublicHtml)}
 if(!publicMode) mapExportBtn.addEventListener("click",()=>{const clone=document.documentElement.cloneNode(true);mapButtons.forEach(btn=>{const c=clone.querySelector("#"+btn.id);if(c){c.style.left=btn.style.left;c.style.top=btn.style.top}});clone.querySelector("#sceneData").textContent=JSON.stringify(scenes);clone.querySelector("body").dataset.publicMode="true";clone.querySelector("body").classList.add("publicMode");const note=clone.querySelector(".mapNote");if(note)note.textContent="番号を押すと移動します。";
 // 写真一覧と360°表示領域はJavaScriptで毎回生成するため、書き出し時は空にする
 const cloneThumbs=clone.querySelector("#thumbs");
@@ -241,5 +243,43 @@ if(clonePanorama){
 const output="<!doctype html>\n"+clone.outerHTML;const blob=new Blob([output],{type:"text/html;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="index.html";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);showStatus("現在の丸数字・緑ボタン位置を埋め込んだ index.html を保存しました")});
 document.addEventListener("contextmenu",e=>{if(e.target.closest("#panorama"))e.preventDefault()});
 sync("entrance");
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
 </script>
 </body></html>
